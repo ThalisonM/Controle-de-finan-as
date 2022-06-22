@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de contas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main>
+        <div class="box-left">
+            <div id="container-faturamento">
+                <h2>Faturamento</h2>
+                <div id="faturamento"></div>
+            </div>
+            <form action="" onsubmit="saveAccounts">
+                <label for="nome">Conta:</label>
+                <input type="text" id="nome" name="conta" placeholder="nome da transação" required>
+    
+                <label for="valor">Valor: </label>
+                <input type="number" name="valor" id="valor" placeholder="Ex: 230" required>
+    
+                <button type="submit" >Registrar</button>
+            </form>
+        </div>
+
+        <div class="box-right">
+            <section id="container-saldos">
+                <div id="creditos">
+                    <h3>Créditos</h3>
+                    <p></p>
+                </div>
+                <div id="debitos">
+                    <h3>Débitos</h3>
+                    <p></p>
+                </div>
+            </section>
+    
+            <section id="contas">
+                <div class="conta">
+                                 
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

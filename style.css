@@ -1,0 +1,165 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(17, 36, 130) 42%, rgba(0,212,255,1) 100%);
+}
+main{
+    width: 600px;
+    height: fit-content;
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+    display: grid;
+    margin: 20px auto 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+#faturamento{
+    min-width: 86px;
+    max-width: fit-content;
+    height: 30px;
+    border-radius: 8px;
+    padding: 7px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+#creditos, #debitos{
+    padding: 5px;
+    width: 135px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+#faturamento, #creditos, #debitos{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.box-left, .box-right{
+    padding: 10px;
+}
+.box-right{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.contas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 50%;
+}
+label{
+    display: block;
+    margin-bottom: 5px;
+}
+input{
+    margin-bottom: 10px;
+    padding: 5px;
+}
+form button{
+    display: block;
+    width: 247px;
+    height: 29px;
+}
+#container-saldos{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+}
+#contas{
+    width: 296px;
+    height: 100px;
+    margin-top: 10px;
+    padding: 6px;
+    box-shadow: 0px 4px 10px -5px rgb(0 0 0 / 75%);
+    overflow: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+#contas p {
+    height: fit-content;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 5px;
+    margin-bottom: 5px;
+    position: relative;
+    text-align: center;
+}
+#contas .conta-debito::before {
+    content: '';
+    right: 0px;
+    top: 0px;
+    border-right: 8px solid red;
+    height: -webkit-fill-available;
+    position: absolute;
+}
+#contas .conta-credito::before {
+    content: '';
+    right: 0px;
+    top: 0px;
+    border-right: 8px solid blue;
+    height: -webkit-fill-available;
+    position: absolute;
+}
+.box-conta img{
+    transition: all 400ms ease;
+}
+
+.box-conta img:hover{
+    transform: translateY(-1px);
+    opacity: 0.8;
+}
+
+@media (max-width: 767px){
+    main {
+        display: flex;
+        flex-direction: column-reverse;
+        width: fit-content;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+@media (max-width: 480px) {
+    body{
+        display: flex;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column-reverse;
+        width: fit-content;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box-right {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    #debitos, #creditos{
+        width: fit-content;
+        min-width: 112px;
+    }
+
+    #contas{
+        width: 100%;
+    } 
+
+    form button {
+        width: 100%;
+    }
+  }
